@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Homework Example</title>
+</head>
+<body>
+<h1>JavaScript Homework Example</h1>
+<div id="output"></div>
+<script type="module">
+    import { counter, counterFactory, myPow, myMax, myMul, myDouble, myTriple } from './js/main.js';
+
+    // №1 Counter
+    console.log(counter()); // 0
+    console.log(counter()); // 1
+    console.log(counter(100)); // 100
+    console.log(counter()); // 101
+    console.log(counter()); // 102
+    console.log(counter(500)); // 500
+    console.log(counter()); // 501
+    console.log(counter()); // 502
+    console.log(counter(0)); // 0
+    console.log(counter()); // 1
+
+    // №2 CounterFactory
+    console.log(counterFactory.value()); // 0
+    counterFactory.increment();
+    counterFactory.increment();
+    counterFactory.increment();
+    console.log(counterFactory.value()); // 3
+    counterFactory.decrement();
+    counterFactory.decrement();
+    console.log(counterFactory.value()); // 1
+    console.log(counterFactory.value(100)); // 100
+    counterFactory.decrement();
+    console.log(counterFactory.value()); // 99
+    console.log(counterFactory.value(200)); // 200
+    counterFactory.increment();
+    console.log(counterFactory.value()); // 201
+
+    // №3 MyPow
+    console.log(myPow(3, 4, myPrint)); // 3^4=81
+    console.log(myPow(2, 3, myPrint)); // 2^3=8
+    console.log(myPow(2, 0, myPrint)); // 2^0=1
+    console.log(myPow(2, -2, myPrint)); // 2^-2=0.25
+
+    // №4 MyMax
+    const list = [12, 23, 100, 34, 56, 9, 233];
+    console.log(myMax(list)); // 233
+
+    // №5 MyMul, MyDouble, MyTriple
+    console.log(myDouble(3)); // = myMul(2, 3) = 6
+    console.log(myDouble(4)); // = myMul(2, 4) = 8
+    console.log(myDouble(5)); // = myMul(2, 5) = 10
+
+    console.log(myTriple(3)); // = myMul(3, 3) = 9
+    console.log(myTriple(4)); // = myMul(3, 4) = 12
+    console.log(myTriple(5)); // = myMul(3, 5) = 15
+</script>
+</body>
+</html>
+
+
+</body>
+</html>
