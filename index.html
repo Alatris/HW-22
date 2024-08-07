@@ -34,20 +34,20 @@
     console.log(counter()); // 1
 
     // №2 CounterFactory
-    console.log(counterFactory.value()); // 0
-    counterFactory.increment();
-    counterFactory.increment();
-    counterFactory.increment();
-    console.log(counterFactory.value()); // 3
-    counterFactory.decrement();
-    counterFactory.decrement();
-    console.log(counterFactory.value()); // 1
-    console.log(counterFactory.value(100)); // 100
-    counterFactory.decrement();
-    console.log(counterFactory.value()); // 99
-    console.log(counterFactory.value(200)); // 200
-    counterFactory.increment();
-    console.log(counterFactory.value()); // 201
+    console.log(count.value(0)); // 0
+    count.increment();
+    count.increment();
+    count.increment();
+    console.log(count.value()); // 3
+    count.decrement();
+    count.decrement();
+    console.log(count.value()); // 1
+    console.log(count.value(100)); // 100
+    count.decrement();
+    console.log(count.value()); // 99
+    console.log(count.value(200)); // 200
+    count.increment();
+    console.log(count.value()); // 201
 
     // №3 MyPow
     console.log(myPow(3, 4, myPrint)); // 3^4=81

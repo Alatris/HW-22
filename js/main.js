@@ -66,22 +66,22 @@ const counterFactory = function() {
     };
 };
 
-const count = counterFactory();
+const myCounter = counterFactory();
 
-console.log(counter.value(0)); // 0
-counter.increment();
-counter.increment();
-counter.increment();
-console.log(counter.value()); // 3
-counter.decrement();
-counter.decrement();
-console.log(counter.value()); // 1
-console.log(counter.value(100)); // 100
-counter.decrement();
-console.log(counter.value()); // 99
-console.log(counter.value(200)); // 200
-counter.increment();
-console.log(counter.value()); // 201
+console.log(myCounter.value(0)); // 0
+myCounter.increment();
+myCounter.increment();
+myCounter.increment();
+console.log(myCounter.value(3)); // 3
+myCounter.decrement();
+myCounter.decrement();
+console.log(myCounter.value(1)); // 1
+console.log(myCounter.value(100)); // 100
+myCounter.decrement();
+console.log(myCounter.value()); // 99
+console.log(myCounter.value(200)); // 200
+myCounter.increment();
+console.log(myCounter.value()); // 201
 
 /*
  * #3
