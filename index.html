@@ -34,26 +34,28 @@
     console.log(counter()); // 1
 
     // №2 CounterFactory
-    console.log(count.value(0)); // 0
-    count.increment();
-    count.increment();
-    count.increment();
-    console.log(count.value()); // 3
-    count.decrement();
-    count.decrement();
-    console.log(count.value()); // 1
-    console.log(count.value(100)); // 100
-    count.decrement();
-    console.log(count.value()); // 99
-    console.log(count.value(200)); // 200
-    count.increment();
-    console.log(count.value()); // 201
+    const myCounter = counterFactory();
+
+    console.log(myCounter.value(0)); // 0
+    myCounter.increment();
+    myCounter.increment();
+    myCounter.increment();
+    console.log(myCounter.value(3)); // 3
+    myCounter.decrement();
+    myCounter.decrement();
+    console.log(myCounter.value(1)); // 1
+    console.log(myCounter.value(100)); // 100
+    myCounter.decrement();
+    console.log(myCounter.value()); // 99
+    console.log(myCounter.value(200)); // 200
+    myCounter.increment();
+    console.log(myCounter.value()); // 201
 
     // №3 MyPow
-    console.log(myPow(3, 4, myPrint)); // 3^4=81
-    console.log(myPow(2, 3, myPrint)); // 2^3=8
-    console.log(myPow(2, 0, myPrint)); // 2^0=1
-    console.log(myPow(2, -2, myPrint)); // 2^-2=0.25
+    console.log(myPow(3, 4, myPow)) // 3^4=81
+    console.log(myPow(2, 3, myPrint)) // 2^3=8
+    console.log(myPow(2, 0, myPrint)) // 2^0=1
+    console.log(myPow(2, -2, myPrint)) // 2^-2=0.25
 
     // №4 MyMax
     const list = [12, 23, 100, 34, 56, 9, 233];

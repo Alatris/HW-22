@@ -66,22 +66,7 @@ const counterFactory = function() {
     };
 };
 
-const myCounter = counterFactory();
 
-console.log(myCounter.value(0)); // 0
-myCounter.increment();
-myCounter.increment();
-myCounter.increment();
-console.log(myCounter.value(3)); // 3
-myCounter.decrement();
-myCounter.decrement();
-console.log(myCounter.value(1)); // 1
-console.log(myCounter.value(100)); // 100
-myCounter.decrement();
-console.log(myCounter.value()); // 99
-console.log(myCounter.value(200)); // 200
-myCounter.increment();
-console.log(myCounter.value()); // 201
 
 /*
  * #3
@@ -97,25 +82,25 @@ console.log(myCounter.value()); // 201
  * console.log(myPow(2, -2, myPrint)) // 2^-2=0.25
  */
 
+// Функція для форматування результату
+
 function myPrint(a, b, res) {
     return `${a}^${b}=${res}`;
 }
 
 function myPow(a, b, myPrint) {
-    function power(base, exponent) {
-        if (exponent === 0) return 1;
-        if (exponent < 0) return 1 / power(base, -exponent);
-        return base * power(base, exponent - 1);
+    function pow(a, b) {
+        if (b === 0) return 1;
+        if (b < 0) return 1 / pow(a, -b);
+        return a * pow(a, b - 1);
     }
 
-    const result = power(a, b);
+    const result = pow(a, b);
     return myPrint(a, b, result);
 }
 
-console.log(myPow(3, 4, myPrint)) // 3^4=81
-console.log(myPow(2, 3, myPrint)) // 2^3=8
-console.log(myPow(2, 0, myPrint)) // 2^0=1
-console.log(myPow(2, -2, myPrint)) // 2^-2=0.25
+
+
 
 
 /*
