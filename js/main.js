@@ -67,7 +67,6 @@ const counterFactory = function() {
 };
 
 
-
 /*
  * #3
  *
@@ -87,7 +86,6 @@ const counterFactory = function() {
 function myPrint(a, b, res) {
     return `${a}^${b}=${res}`;
 }
-
 function myPow(a, b, myPrint) {
     function pow(a, b) {
         if (b === 0) return 1;
@@ -99,7 +97,7 @@ function myPow(a, b, myPrint) {
     return myPrint(a, b, result);
 }
 
-console.log(myPow(3, 4, myPow)) // 3^4=81
+console.log(myPow(3, 4, myPrint)) // 3^4=81
 console.log(myPow(2, 3, myPrint)) // 2^3=8
 console.log(myPow(2, 0, myPrint)) // 2^0=1
 console.log(myPow(2, -2, myPrint)) // 2^-2=0.25

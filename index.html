@@ -27,18 +27,18 @@
     // №2 CounterFactory
     const myCounter = counterFactory();
 
-    console.log(myCounter.value(0)); // 0
+    console.log(myCounter.value()); // 0
     myCounter.increment();
     myCounter.increment();
     myCounter.increment();
-    console.log(myCounter.value(3)); // 3
+    console.log(myCounter.value()); // 3 (результат роботи increment())
     myCounter.decrement();
     myCounter.decrement();
-    console.log(myCounter.value(1)); // 1
-    console.log(myCounter.value(100)); // 100
+    console.log(myCounter.value()); // 1 (результат роботи decrement())
+    console.log(myCounter.value(100)); // 100 (встановлює нове значення)
     myCounter.decrement();
     console.log(myCounter.value()); // 99
-    console.log(myCounter.value(200)); // 200
+    console.log(myCounter.value(200)); // 200 (встановлює нове значення)
     myCounter.increment();
     console.log(myCounter.value()); // 201
 
@@ -58,9 +58,5 @@
     console.log(myTriple(4)); // = myMul(3, 4) = 12
     console.log(myTriple(5)); // = myMul(3, 5) = 15
 </script>
-</body>
-</html>
-
-
 </body>
 </html>
