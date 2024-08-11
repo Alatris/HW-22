@@ -89,13 +89,13 @@ const myPrint = (a, b, res) => {
 const myPow = (a, b, callback) => {
     let res;
     if (b === 0) {
-        res = 1; // Любое число в степени 0 равно 1
+        res = 1;
     } else if (b > 0) {
-        res = a * myPow(a, b - 1, callback); // Положительная степень
+        res = a * myPow(a, b - 1, callback);
     } else {
-        res = 1 / myPow(a, -b, callback); // Отрицательная степень
+        res = 1 / myPow(a, -b, callback);
     }
-    return callback(a, b, res); // Вызов переданной callback функции
+    return callback(a, b, res);
 };
 
 console.log(myPow(3, 4, myPrint)) // 3^4=81
