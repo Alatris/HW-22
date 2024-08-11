@@ -83,19 +83,20 @@ const counterFactory = function() {
 
 // Функція для форматування результату
 
-function myPrint(a, b, res) {
+const myPrint = (a, b, res) => {
     return `${a}^${b}=${res}`;
-}
-function myPow(a, b, myPrint) {
-    function pow(a, b) {
-        if (b === 0) return 1;
-        if (b < 0) return 1 / pow(a, -b);
-        return a * pow(a, b - 1);
+};
+const myPow = (a, b, callback) => {
+    let res;
+    if (b === 0) {
+        res = 1; // Любое число в степени 0 равно 1
+    } else if (b > 0) {
+        res = a * myPow(a, b - 1, callback); // Положительная степень
+    } else {
+        res = 1 / myPow(a, -b, callback); // Отрицательная степень
     }
-
-    const result = pow(a, b);
-    return myPrint(a, b, result);
-}
+    return callback(a, b, res); // Вызов переданной callback функции
+};
 
 console.log(myPow(3, 4, myPrint)) // 3^4=81
 console.log(myPow(2, 3, myPrint)) // 2^3=8
@@ -148,4 +149,4 @@ console.log(myTriple(3)) // = myMul(3, 3) = 9
 console.log(myTriple(4)) // = myMul(3, 4) = 12
 console.log(myTriple(5)) // = myMul(3, 5) = 15
 
-export { counter, counterFactory, myPow, myMax, myMul, myDouble, myTriple }
+export { counter, counterFactory, myPrint, myPow, myMax, myMul, myDouble, myTriple }
