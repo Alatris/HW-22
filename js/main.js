@@ -86,24 +86,16 @@ const counterFactory = function() {
 const myPrint = (a, b, res) => {
     return `${a}^${b}=${res}`;
 };
-const myPow = (a, b, callback) => {
+const myPow = (a, b, myPrint) => {
     let res;
     if (b === 0) {
-        res = 1;
+        return myPrint (a, b, 1);
     } else if (b > 0) {
-        res = a * myPow(a, b - 1, callback);
+        return myPrint(a, b, a * myPow(a, b - 1, myPrint).split('=')[1]);
     } else {
-        res = 1 / myPow(a, -b, callback);
+        return myPrint(a, b, 1 / myPow(a, -b, myPrint).split('=')[1]);
     }
-    return callback(a, b, res);
 };
-
-console.log(myPow(3, 4, myPrint)) // 3^4=81
-console.log(myPow(2, 3, myPrint)) // 2^3=8
-console.log(myPow(2, 0, myPrint)) // 2^0=1
-console.log(myPow(2, -2, myPrint)) // 2^-2=0.25
-
-
 
 /*
  * #4
